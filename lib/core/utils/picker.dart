@@ -9,7 +9,7 @@ class Picker {
       XFile? video = await ImagePicker().pickVideo(source: imageSource,);
       return video != null ? File(video.path) : null;
     } on PlatformException catch (e) {
-      Alerts(e.toString());
+      Toaster(e.toString());
       return null;
     }
   }

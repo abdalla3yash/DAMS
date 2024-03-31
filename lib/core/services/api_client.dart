@@ -1,28 +1,36 @@
-import 'package:dams/core/services/consts.dart';
-import 'package:dams/core/utils/alerts.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
+// import 'package:dams/core/services/consts.dart';
+// import 'package:dams/core/utils/alerts.dart';
+// import 'package:dio/dio.dart';
+// import 'package:flutter/foundation.dart';
+// import 'package:flutter/material.dart';
+// import 'package:loading_overlay/loading_overlay.dart';
+//  Future<void> uploadVideo({required String formField}) async {
+//     try {
+//       setState(() {
+//         _isLoading = true;
+//       });
 
-Future<void> uploadVideo({required var formField}) async {
-  
-  Dio dio = Dio();
-  FormData formData = FormData.fromMap({"file": await MultipartFile.fromFile(formField, filename: "video.mp4")});
+//       FormData formData = FormData.fromMap({
+//         "file": await MultipartFile.fromFile(formField, filename: "video.mp4"),
+//       });
 
-  try {
-    Response response = await dio.post(
-      Consts.devUrl,
-      data: formData,
-      options: Options(contentType: 'multipart/form-data'),
-    );
+//       await dio.post(
+//         Consts.devUrl,
+//         data: formData,
+//         options: Options(contentType: 'multipart/form-data'),
+//       );
 
-    if (response.statusCode == 200) {
-      Alerts('Video upload successful!');
-    } else {
-      Alerts(response.statusMessage.toString());
-      if (kDebugMode) print('Video upload failed with status code: ${response.toString()}');
-    }
-  } catch (e) {
-      Alerts(e.toString());
-      if (kDebugMode) print('Error uploading video: $e');
-  }
-}
+//       setState(() {
+//         _isLoading = false;
+//       });
+
+//       Toaster('Video upload successful!');
+//     } catch (e) {
+//       setState(() {
+//         _isLoading = false;
+//       });
+      
+//       Toaster('Error uploading video: $e');
+//       if (kDebugMode) print('Error uploading video: $e');
+//     }
+//   }
