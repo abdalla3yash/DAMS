@@ -40,9 +40,10 @@ dependencies:
   toast: ^0.3.0
   permission_handler: ^11.3.1
   video_thumbnail: ^0.5.3
-  loading_overlay: ^0.3.0
+  loader_overlay: ^4.0.0
   video_player: ^2.8.3
   video_compress: ^3.1.2
+  flutter_spinkit: ^5.2.1
 
 
 
